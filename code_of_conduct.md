@@ -22,7 +22,7 @@ Examples of unacceptable behavior include:
 
 ## Enforcement
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the project team at [your-email@example.com]. All complaints will be reviewed and investigated promptly and fairly.
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the project team at ahmadkhanlmb100@gmail.com. All complaints will be reviewed and investigated promptly and fairly.
 
 ## Attribution
 
