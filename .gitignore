@@ -1,0 +1,41 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# VS Code workspace and settings
+.vscode/
+
+# Logs
+*.log
+
+# Cache and distribution
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Unit test / coverage reports
+.coverage
+.tox/
+.nox/
+
+# Pytest cache
+.pytest_cache/
+
+# Ignore data directories
+data/raw/
+data/processed/
+data/summaries/
+
+# Ignore sensitive environment files
+.env
