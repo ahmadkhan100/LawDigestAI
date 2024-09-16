@@ -1,0 +1,9 @@
+model:
+  name: facebook/bart-large-cnn
+  max_length: 150
+  min_length: 30
+
+paths:
+  raw_data_dir: "../data/raw/"
+  processed_data_dir: "../data/processed/"
+  summary_data_dir: "../data/summaries/"
