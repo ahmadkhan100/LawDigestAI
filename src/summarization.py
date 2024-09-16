@@ -1,5 +1,6 @@
 from transformers import pipeline
 import os
+import json
 
 class LegalSummarizer:
     """
@@ -12,6 +13,9 @@ class LegalSummarizer:
     
     summarize_file(file_path: str) -> str:
         Loads text from a file and generates its summary.
+    
+    summarize_json_file(file_path: str) -> str:
+        Summarizes the cleaned text from a JSON file created by the preprocessor.
     
     summarize_directory(raw_dir: str, summary_dir: str):
         Summarizes all text files in a directory and saves them in the summary directory.
@@ -30,6 +34,13 @@ class LegalSummarizer:
             text = file.read()
         return self.summarize(text)
 
+    def summarize_json_file(self, file_path: str) -> str:
+        """Generates a summary for the cleaned text in a JSON file produced by the DataPreprocessor."""
+        with open(file_path, 'r', encoding='utf-8') as file:
+            data = json.load(file)
+            cleaned_text = data['cleaned_text']
+        return self.summarize(cleaned_text)
+
     def summarize_directory(self, raw_dir: str, summary_dir: str):
         """Summarizes all text files in a directory and saves them in the summary directory."""
         if not os.path.exists(summary_dir):
@@ -39,7 +50,7 @@ class LegalSummarizer:
             raw_file_path = os.path.join(raw_dir, file_name)
             summary_file_path = os.path.join(summary_dir, f"summary_{file_name}")
 
-            summary = self.summarize_file(raw_file_path)
+            summary = self.summarize_json_file(raw_file_path)
             with open(summary_file_path, 'w', encoding='utf-8') as file:
                 file.write(summary)
 
